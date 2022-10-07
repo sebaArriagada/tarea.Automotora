@@ -1,29 +1,47 @@
 package automotora;
 public class Vehiculo {
 	private String modelo;
-	private int anios;
-	private int precio;
+	private int anios, precio;
 	private double kilometraje;
-	private String color;
-	private String marca;
-	public Automotora automotora;
+	private ColorVehiculo color;
+	private MarcaVehiculo marca;
 
+	public Vehiculo(String modelo, ColorVehiculo color, MarcaVehiculo marca, int anios, int precio, double kilometraje){
+		this.modelo = modelo;
+		this.color = color;
+		this.marca = marca;
+		this.anios = anios;
+		this.precio = precio;
+		this.kilometraje = kilometraje;
+	}
+
+	public Vehiculo(){
+		this.modelo = "Sin datos";
+		this.color = null;
+		this.marca = null;
+		this.anios = 0;
+		this.kilometraje = 0;
+	}
 	public String getModelo() {
 		return this.modelo;
 	}
-
-	public String getColor() {
-		return this.color;
+	public void setModelo(String modelo){
+		this.modelo = modelo;
+	}
+	public ColorVehiculo getColor() {
+		return color;
 	}
 
-	public void setColor(String color) {
+	public void setColor(ColorVehiculo color) {
 		this.color = color;
 	}
 
-	public String getMarca() {
-		return this.marca;
+	public MarcaVehiculo getMarca() {
+		return marca;
 	}
-
+	public void setMarca(MarcaVehiculo marca){
+		this.marca = marca;
+	}
 	public int getPrecio() {
 		return this.precio;
 	}
@@ -32,7 +50,7 @@ public class Vehiculo {
 		this.precio = precio;
 	}
 
-	public int getAniosos() {
+	public int getAnios() {
 		return this.anios;
 	}
 
@@ -44,12 +62,10 @@ public class Vehiculo {
 		this.kilometraje = kilometraje;
 	}
 
-	public Vehiculo(String modelo, String color, String marca, int precio, int anios, double kilometraje) {
-		this.modelo = modelo;
-		this.color = color;
-		this.marca = marca;
-		this.precio = precio;
-		this.anios = anios;
-		this.kilometraje = kilometraje;
+	@Override
+	public String toString(){
+		return this.modelo+","+this.color+","+this.marca+
+				","+this.anios+","+this.precio+","+this.kilometraje;
 	}
+
 }

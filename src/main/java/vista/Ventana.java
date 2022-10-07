@@ -41,5 +41,41 @@ public class Ventana extends JFrame implements ActionListener{
         this.add(label);
     }
 
-    
+    protected JFormattedTextField generarJFormattedTextField(InternationalFormatter formato, int posicionX, int posicionY, int largoX, int largoY){
+        JFormattedTextField textField = new JFormattedTextField(formato);
+        textField.setBounds(posicionX, posicionY, largoX, largoY);
+        return textField;
+    }
+
+    protected InternationalFormatter generarFormato(int minimo){
+        InternationalFormatter formato = new InternationalFormatter();
+        formato.setMinimum(new Integer(minimo));
+        return formato;
+    }
+    protected InternationalFormatter generarFormato(int minimo, int maximo){
+        InternationalFormatter formato = new InternationalFormatter();
+        formato.setMinimum(new Integer(minimo));
+        formato.setMaximum(new Integer(maximo));
+
+        return formato;
+    }
+    protected JTextField generarJTextField(int posicionX, int posicionY, int largoX, int largoY){
+        JTextField textField= new JTextField();
+        textField.setBounds(posicionX, posicionY, largoX, largoY);
+        return textField;
+    }
+    protected JRadioButton generarJRadioButton(String texto, int posicionX, int posicionY, int largoX, int largoY){
+        JRadioButton boton= new JRadioButton(texto);
+        boton.setBounds(posicionX, posicionY, largoX, largoY);
+        return boton;
+    }
+    protected JComboBox generarListaDesplegable(Object[] datosLista, int posicionX, int posicionY, int largoX, int largoY){
+        JComboBox lista= new JComboBox(datosLista);
+        lista.setBounds(posicionX, posicionY, largoX, largoY);
+        return lista;
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

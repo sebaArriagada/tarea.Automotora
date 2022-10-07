@@ -1,6 +1,16 @@
+package principal;
+
+import automotora.Automotora;
+import controller.AutomotoraController;
+import vista.MenuPrincipal;
+
 public class Principal {
 
-	public static_void main(String[] args) {
-		throw new UnsupportedOperationException();
+	public class main {
+		public static void main(String[] args) {
+			Automotora automotora = new Automotora();
+			automotora = AutomotoraController.cargaMasivaDatos(automotora);
+			MenuPrincipal ventana = new MenuPrincipal(automotora);
+		}
 	}
 }

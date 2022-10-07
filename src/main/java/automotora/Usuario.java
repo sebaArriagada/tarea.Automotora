@@ -1,19 +1,16 @@
 package automotora;
 
-public class Usuario {
-	private String nombre;
-	private String direccion;
-	private String numeroTelefonico;
-	private String correo;
-	private String rut;
-	public Automotora automotora;
+public class Usuario extends Persona {
 
-	public String getNombre() {
-		return this.nombre;
-	}
+	private String direccion, numeroTelefonico, correo;
+	private boolean primeraCompra;
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public Usuario(String nombre, String direccion, String numeroTelefonico, String correo, String run){
+		super(nombre, run);
+		this.direccion = direccion;
+		this.numeroTelefonico = numeroTelefonico;
+		this.correo = correo;
+		this.primeraCompra = true;
 	}
 
 	public String getDireccion() {
@@ -40,15 +37,16 @@ public class Usuario {
 		this.correo = correo;
 	}
 
-	public String getRut() {
-		return this.rut;
+	public double obtenerDescuento(){
+		if (this.primeraCompra = true){
+			return 0.8;
+		}
+		else {
+			return 1;
+		}
+	}
+	public String toString(){
+		return super.nombre + "," + this.direccion + "," + this.numeroTelefonico + "," + this.correo + "," + super.run;
 	}
 
-	public void setRut(String rut) {
-		this.rut = rut;
-	}
-
-	public Usuario(String nombre, Object direccion, Object string, String numeroTelefonico, String correo, String rut) {
-		throw new UnsupportedOperationException();
-	}
 }
